@@ -1,0 +1,20 @@
+.container {
+  max-width: 1080px;
+  margin: 20px auto;
+}
+
+.current-location {
+  height: 30px;
+  background-color: white;
+  border: none;
+  color: gray;
+  border-radius: 3px;
+  margin-top: 20px;
+font-size: 15px;
+  cursor: pointer;
+}
+
+.current-location:hover{
+  background-color: rgb(170, 169, 169);
+  
+}
