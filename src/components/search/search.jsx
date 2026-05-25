@@ -8,10 +8,10 @@ const Search = ({ onSearchChange, clearSearch }) => {
     const [error, setError] = useState("");
 
 
-       useEffect(() => {
+    useEffect(() => {
         setSearch(null);
     }, [clearSearch]);
-    
+
     const loadOptions = (inputValue) => {
         setLoading(true);
         setError("");
@@ -37,7 +37,6 @@ const Search = ({ onSearchChange, clearSearch }) => {
                 };
             })
             .catch((err) => {
-                console.error(err);
                 setError("Couldn't fetch city. Please try again!");
 
                 return {

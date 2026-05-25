@@ -10,11 +10,11 @@
   color: gray;
   border-radius: 3px;
   margin-top: 20px;
-font-size: 15px;
+  font-size: 15px;
   cursor: pointer;
 }
 
-.current-location:hover{
+.current-location:hover {
   background-color: rgb(170, 169, 169);
-  
+
 }

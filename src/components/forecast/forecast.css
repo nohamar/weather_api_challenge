@@ -56,12 +56,12 @@
     height: 30px;
 }
 
-.daily-details-grid-item label:first-child {
+.daily-details-grid-item span:first-child {
 
     color: #757575;
 }
 
-.daily-details-grid-item label:last-child {
+.daily-details-grid-item span:last-child {
     color: #212121;
 
 }

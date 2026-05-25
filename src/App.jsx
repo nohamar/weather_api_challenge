@@ -15,6 +15,8 @@ function App() {
 
   const handleOnSearchChange = (searchData) => {
     setLoading(true);
+    setError("");
+
     const [lat, lon] = searchData.value.split(" ");
     const currentWeatherFetch = fetch(`${WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`)
     const forecastFetch = fetch(`${WEATHER_API_URL}/forecast?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`)
@@ -32,44 +34,42 @@ function App() {
       })
 
       .catch((err) => {
-        console.log(err)
         setError("Couldnt fetch weather data. Please try again!");
-        setLoading(false);
+
       })
       .finally(() => {
-                setLoading(false);
-            });
+        setLoading(false);
+      });
   }
 
-  const handleCurrentLocation=()=>{
+  const handleCurrentLocation = () => {
 
-     setError("");
-  setClearSearch((prev) => prev + 1); 
+    setError("");
+    setClearSearch((prev) => prev + 1);
 
-  if (!navigator.geolocation) {
-    setError("Geolocation is not supported by your browser.");
-    return;
-  }
+    if (!navigator.geolocation) {
+      setError("Geolocation is not supported by your browser.");
+      return;
+    }
 
     navigator.geolocation.getCurrentPosition(
-  (position) => {
-    const searchData ={
-      value : `${position.coords.latitude} ${position.coords.longitude}`, 
-      label: "Current Location" };
-    handleOnSearchChange(searchData); 
-  },
+      (position) => {
+        const searchData = {
+          value: `${position.coords.latitude} ${position.coords.longitude}`,
+          label: "Current Location"
+        };
+        handleOnSearchChange(searchData);
+      },
 
-  (error) => {
-    setError("Couldnt Access Location. Please try Again!"); 
-  }
-);
+      (error) => {
+        setError("Couldnt Access Location. Please try Again!");
+      }
+    );
   }
 
-  console.log(currentWeather);
-  console.log(forecast);
   return (
     <div className='container'>
-      <Search onSearchChange={handleOnSearchChange}   clearSearch={clearSearch}/>
+      <Search onSearchChange={handleOnSearchChange} clearSearch={clearSearch} />
       <button onClick={handleCurrentLocation} className='current-location'>Use My Current Location</button>
       {loading && <p>Loading weather data...</p>}
       {error && <p>{error}</p>}

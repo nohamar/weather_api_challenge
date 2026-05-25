@@ -8,14 +8,15 @@
     padding: 0 20px 20px 20px;
 }
 
-.top, .bottom {
+.top,
+.bottom {
 
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.city{
+.city {
     font-weight: 600;
     font-size: 18px;
     line-height: 1;
@@ -23,19 +24,19 @@
     letter-spacing: 1px;
 }
 
-.weather-description{
-font-weight: 400;
-font-size: 14px;
-line-height: 1;
-margin: 0;
+.weather-description {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1;
+    margin: 0;
 
 }
 
-.weather-icon{
+.weather-icon {
     width: 100px;
 }
 
-.temperature{
+.temperature {
     font-weight: 600;
     font-size: 70px;
     width: auto;
@@ -43,7 +44,7 @@ margin: 0;
     margin: 10px 0;
 }
 
-.details{
+.details {
     width: 100%;
     padding-left: 20px;
 }
@@ -64,4 +65,3 @@ margin: 0;
     font-weight: 600;
     font-size: 12px;
 }
-
